@@ -1,0 +1,61 @@
+﻿
+/* GENERAL STYLES */
+body {
+    font-family: Verdana;
+    background-color: #EAEAEA;
+}
+.profile #avater{
+    margin-left: 15px !important;
+  }
+
+.panel{
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+
+.user-wrapper .btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    margin: 5px;
+}
+
+.user-wrapper .description {
+    padding: 25px;
+    background-color: #fff;
+}
+.user-wrapper img {
+    width:100%;
+    height: 250px;
+}
+
+
+/* SOCIAL BUTTONS */
+.btn-social {
+    color: white;
+    opacity: 0.8;
+}
+
+.btn-social:hover {
+    color: white;
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* .btn-facebook {
+    background-color: #3b5998;
+}
+
+.btn-twitter {
+    background-color: #00aced;
+}
+
+.btn-linkedin {
+    background-color: #0e76a8;
+}
+
+.btn-google {
+    background-color: #c32f10;
+} */

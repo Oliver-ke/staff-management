@@ -1,0 +1,42 @@
+{% extends 'school_management/base.html' %}
+{% load static %}
+{% block title %}Welcome|SES {% endblock %}
+
+
+{% block content %}
+<div class=" content">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="flexsearch d-flex justify-content-center">
+                <div class="flexsearch--wrapper">
+                    <form class="flexsearch--form" action="{% url 'search' %}" method="post">
+                            {% csrf_token %}
+                        <div class="flexsearch--input-wrapper">
+                            {% comment %} <input class="flexsearch--input" type="search" placeholder="Search Staff"> {% endcomment %}
+                            {{form.name}}
+                        </div>
+                        <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-12 buttons">
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'form' %}" class="sbtn red">Add Academic Staff</a>
+                    <a href="{% url 'staffs' %}" class="sbtn red">View Academic Staffs</a>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 buttons">
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'Nform' %}" class="sbtn blue">Add None Academic Staff </a>
+                <a href="{% url 'Nstaffs' %}" class="sbtn blue">View None Academic Staffs</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

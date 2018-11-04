@@ -1,0 +1,54 @@
+{% extends 'school_management/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock %}
+{% block title %}Register|SES {% endblock %}
+
+{% block content %}
+<div class="container ">
+ 
+  <form method="POST" action="{% url 'register' %}" >
+      {% csrf_token %}
+      <div class="row">
+        <h4>Account Registration</h4>
+        {% if error_message %}
+        <div class="bg-danger error p-d ml-b">{{ error_message }}</div>
+         {% endif %}
+        <div class="input-group input-group-icon">
+          {{form.full_name}}
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+
+        <div class="input-group input-group-icon">
+          {{form.user_name}}
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+
+        <div class="input-group input-group-icon">
+          {{form.email}}
+          <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          {{form.password}}
+        <div class="input-icon"><i class="fa fa-key"></i></div>
+        </div>
+        <div class="input-group input-group-icon">
+          {{form.password_repeat}}
+            <div class="input-icon"><i class="fa fa-key"></i></div>
+        </div>
+      </div>
+        <h4>Register Account</h4>
+        <div class="input-group">
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </form>
+
+
+ 
+</div>
+{% endblock %}

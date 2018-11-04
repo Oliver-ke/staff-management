@@ -1,0 +1,98 @@
+{% extends 'school_management/base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %} Profile|SES {% endblock %}
+
+
+{% block content %}
+
+<div class="row t-head">
+        <div class="col-3 ">
+            <button type="button" class="btn btn-primary tbtn"><a href="{% url 'index' %}">Back Home</a></button>
+        </div>
+        <div class="col-6">
+            <h3>{{title}}</h3>
+        </div>   
+</div>
+    <!-- NAVBAR CODE END -->
+    <div class="container-flat ">
+         <!-- USER PROFILE ROW STARTS-->
+        <div class="row profile">
+            <div class="col-md-3 col-sm-3 " >                
+                <div class="user-wrapper" id="avater">
+                    {% if staff.avater %}
+                    <img src="{{ staff.avater.url }}" id="avtr" class="img-responsive "  /> 
+                    {% endif %}
+                    <div class="description">
+                        <h4>{{staff.name}}</h4>
+                        <h5> <strong> Website Designer </strong></h5>
+                        <p> Pellentesque elementum dapibus convallis. </p>
+                        <hr />
+                        <a href="#" class="btn btn-danger btn-sm"> <i class="fa fa-user-plus" ></i> &nbsp;Profile + </a> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-8 detail user-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col-md-12  col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{staff.name}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                <div class="row">
+                                    <div class=" col-md-12 "> 
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                        <tr>
+                                            <td>Department:</td>
+                                            <td>Programming</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hire date:</td>
+                                            <td>06/23/2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date of Birth</td>
+                                            <td>01/24/1988</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Gender</td>
+                                            <td>Female</td>
+                                        </tr>
+                                           
+                                        <tr>
+                                            <tr>
+                                            <td>Home Address</td>
+                                            <td>Kathmandu,Nepal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td><a href="mailto:info@support.com">info@support.com</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone Number</td>
+                                            <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile) </td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                    <a href="#" class="btn btn-primary">Home page</a>
+                                    <a href="#" class="btn btn-danger">Edit Profile</a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+{% endblock %}
+

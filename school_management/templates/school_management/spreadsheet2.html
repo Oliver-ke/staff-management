@@ -1,0 +1,57 @@
+{% extends 'school_management/base.html' %}
+{% load static %}
+{% block title %}NStaff|SMS {% endblock %}
+
+
+{% block content %}
+<div class="container-flat">
+    <div class="row t-head">
+        <div class="col-3 ">
+            <button type="button" class="btn btn-primary tbtn"><a href="{% url 'index' %}">Back Home</a></button>
+        </div>
+        <div class="col-6">
+            <h3>Database Records for None Academc Staffs</h3>
+        </div>   
+    </div>
+<table class="table table-striped table-bordered table-hover table-sm">
+    <thead class="thead-dark ">
+        <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">Name</th>
+            <th scope="col">1st Appt</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Salary Level</th>
+            <th scope="col">Step</th>
+            <th scope="col">Last Promotion</th>
+            <th scope="col">Present Yr</th>
+            <th scope="col">Res score</th>
+            <th scope="col">Total score</th>
+            <th scope="col">A & PC</th>
+            <th scope="col">No. of Yrs Present Grade</th>
+            <th scope="col">Due Promotion</th>
+            <th scope="col">Sys Recom Upgrade</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for s in staffs %}
+        <tr>
+            <th scope="row">{{s.id}}</th>
+            <td>{{s.name}}</td>
+            <td>{{s.dFirstAppointment}}</td>
+            <td>{{s.qualification}}</td>
+            <td>{{s.salaryGLevel}}</td>
+            <td>{{s.step}}</td>
+            <td>{{s.yLastPromotion}}</td>
+            <td>{{s.pressentYear}}</td>
+            <td>{{s.responsibilityS}}</td>
+            <td>{{s.totalScore}}</td>
+            <td>{{s.a_pcRecom}}</td>
+            <td>{{s.nYearsPresentG}}</td>
+            <td>{{s.duePromotion}}</td>
+            <td>{{s.systemRecomUpgrade}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}
